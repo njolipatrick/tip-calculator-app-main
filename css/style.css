@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300&family=Space+Mono:wght@400;700&display=swap");
+* {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: "Space Mono", monospace;
+}
+/* 
+- Strong cyan: hsl(172, 67%, 45%)
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+ */
+
+:root {
+  --gb: hsl(172, 67%, 45%);
+  --secondary: hsl(183, 100%, 15%);
+  --tetiary: hsl(186, 14%, 43%);
+  --d_gray: hsl(184, 14%, 56%);
+  --l_gray: hsl(184, 14%, 56%);
+  --llgray: hsl(189, 41%, 97%);
+  --primary: hsl(0, 0%, 100%);
+}
+
+form#form {
+  position: relative;
+}
+input#people {
+  background-image: url("../images/person.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+input#people::placeholder {
+  position: absolute;
+  left: 9.8rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
