@@ -16,46 +16,57 @@
   <body>
     <main>
       <form action="">
-        <aside>
+        <aside class="entries">
           <label for="bill">Bill</label>
-          <input type="number" id="bill" name="bill" required />
+          <input type="number" id="bill" name="bill" placeholder="0" />
 
-          <label for="tip">Select Tip %</label>
-          <input type="button" id="five" name="five" value="5%" />
-          <input type="button" id="ten" name="ten" value="10%" />
-          <input type="button" id="fifteen" name="fifteen" value="15%" />
-          <input
-            type="button"
-            id="twenty-five"
-            name="twenty-five"
-            value="25%"
-          />
-          <input type="button" id="fifty" name="fifty" value="50%" />
-          <input type="button" id="custom" name="custom" value="Custom" />
-
+          <div class="inputs">
+            <label for="tip">Select Tip %</label>
+            <div class="input-wrapper">
+              <input type="button" id="five" name="five" value="5%" />
+              <input type="button" id="ten" name="ten" value="10%" />
+              <input type="button" id="fifteen" name="fifteen" value="15%" />
+              <input
+                type="button"
+                id="twenty-five"
+                name="twenty-five"
+                value="25%"
+              />
+              <input type="button" id="fifty" name="fifty" value="50%" />
+              <input
+                type="text"
+                id="custom"
+                name="custom"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
           <label for="people">Number of People</label>
-          <input type="text" onchange="" name="people" id="people" placeholder="0"/>
+          <input type="number" name="people" id="people" placeholder="0" />
+          <!-- <img src="../images/person.svg" id="input_img" /> -->
         </aside>
 
-        <aside>
-          <aside>
-            <div>
-              <h3>Tip Amount</h3>
-              <p>/ person</p>
-            </div>
-            <div>
-              <h2>$<span>0.00</span></h2>
-            </div>
-          </aside>
+        <aside class="result">
+          <aside class="i-result">
+            <aside>
+              <div class="amount">
+                <h5>Tip Amount</h5>
+                <p>/ person</p>
+              </div>
+              <div>
+                <h2 class="tip">$<span>0.00</span></h2>
+              </div>
+            </aside>
 
-          <aside>
-            <div>
-              <h3>Total</h3>
-              <p>/ person</p>
-            </div>
-            <div>
-              <h2>$<span>0.00</span></h2>
-            </div>
+            <aside>
+              <div class="amount">
+                <h5>Total</h5>
+                <p>/ person</p>
+              </div>
+              <div>
+                <h2 class="total">$<span>0.00</span></h2>
+              </div>
+            </aside>
           </aside>
 
           <button>Reset</button>
@@ -67,8 +78,8 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Njoli Patrick</a>.
     </div>
-    <!-- <script type="text/javascript" src="js\index.js"></script> -->
+    <script type="text/javascript" src="js\index.js"></script>
   </body>
 </html>

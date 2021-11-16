@@ -1,17 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300&family=Space+Mono:wght@400;700&display=swap");
 * {
-  /* font-family: 'Roboto', sans-serif; */
   font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
 }
-/* 
-- Strong cyan: hsl(172, 67%, 45%)
-- Very dark cyan: hsl(183, 100%, 15%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Dark grayish cyan: hsl(184, 14%, 56%)
-- Light grayish cyan: hsl(185, 41%, 84%)
-- Light grayish cyan: hsl(189, 41%, 97%)
-- White: hsl(0, 0%, 100%)
- */
+body {
+  background: var(--gb);
+  margin: 6vw 20vw;
+}
 
 :root {
   --gb: hsl(172, 67%, 45%);
@@ -22,25 +18,186 @@
   --llgray: hsl(189, 41%, 97%);
   --primary: hsl(0, 0%, 100%);
 }
-
-form#form {
-  position: relative;
+form {
+  display: flex;
+  place-content: space-between;
+  background: var(--primary);
 }
-input#people {
-  background-image: url("../images/person.svg");
-  background-size: contain;
+main {
+  border-radius: 15px;
+  padding: 2rem;
+  padding-left: 3.125rem;
+  background: var(--primary);
+  width: 57.5rem;
+}
+.entries {
+  /* padding: 1.5rem; */
+  padding-right: 3rem;
+}
+.input-wrapper {
+  /* display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 0.5rem;
+  padding-top: 1rem; */
+  width: 23rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.input-wrapper input {
+  border-radius: 0.3rem;
+  padding: 0.6rem 2rem;
+  border: none;
+  color: var(--primary);
+  background-color: var(--secondary);
+  font-size: 1rem;
+  font-weight: bolder;
+  width: 100%;
+  /* this will be commented out possibly*/
+  margin: 0.1rem;
+}
+.inputs {
+  padding: 3rem 0;
+}
+.entries .inputs input:hover {
+  color: var(--secondary);
+  background-color: var(--gb);
+}
+.entries .inputs input:active {
+  color: var(--secondary);
+  background-color: var(--gb);
+}
+#people {
+  background-image: url("/images/person.svg");
+}
+#bill {
+  background-image: url("/images/money.svg");
+}
+#custom {
+  padding: 0.6rem 0;
+  flex: 1;
+  width: 7.4rem;
+}
+#five,
+#ten,
+#fifteen,
+#twenty-five,
+#fifty {
+  flex: 1;
+}
+#bill,
+#people {
+  background-color: var(--d_gray);
+  opacity: 0.5;
+  border: none;
   background-repeat: no-repeat;
-  position: absolute;
+  background-size: contain;
+  width: 100%;
+  text-align: right;
+  padding: 0.6rem 0.1rem;
+  font-size: 1rem;
+  border-radius: 8px;
 }
-input#people::placeholder {
-  position: absolute;
-  left: 9.8rem;
+#bill:focus,
+#people:focus {
+  border: none;
+  opacity: 0.8;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.result {
+  background: var(--secondary);
+  /* margin: 3rem; */
+  padding: 2rem;
+  width: 50%;
+  border-radius: 0.3rem;
+  color: var(--primary);
+  text-align: center;
+}
+button {
+  background-color: var(--gb);
+  border: none;
+  padding: 0.5rem 6rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+}
+button:hover {
+  color: var(--llgray);
+}
+.i-result aside {
+  display: flex;
+  place-content: space-between;
+  color: var(--primary);
+  font-size: 1rem;
+}
+.i-result{
+  margin-bottom: 4rem;
+}
+.i-result h2 {
+  color: var(--gb);
+  font-size: 2rem;
+}
+.i-result p {
+  color: var(--l_gray);
+}
+.amount {
+  margin: 1rem 0;
+  text-align: left;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 3vw 10vw;
+  }
+  main {
+    width: 26rem;
+  }
+  form {
+    display: block;
+  }
+  .input-wrapper {
+    width: 100%;
+  }
+  .input-wrapper input {
+    padding: 0.6rem 4rem;
+  }
+  #bill,
+  #people {
+    width: 25.5rem;
+  }
+  #custom {
+    flex: 1;
+    padding: 0 2.4rem;
+  }
+  #five,
+  #ten,
+  #fifteen,
+  #twenty-five,
+  #fifty {
+    flex: 1;
+  }
+  .input-wrapper {
+    width: 25rem;
+  }
+  .result {
+    margin-top: 2rem;
+    width: 22rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  body {
+    margin: 100%;
+  }
 }
