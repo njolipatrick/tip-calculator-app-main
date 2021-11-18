@@ -1,40 +1,63 @@
-let people = document.querySelector("#people");
-
-// let bill = document.querySelector("#bill").value;
-
-// let tip = (document.querySelector(".tip span").innerHTML = "2.3");
-
-// let total = (document.querySelector(".total span").innerHTML = "200");
-
 // const calc = function () {
-//   let five = document.querySelector("input[name=five]").value === "5%" ? 5 : 0;
-//   let ten = document.querySelector("input[name=ten]").value === '10%' ? 10 : 0;
-//   let fifteen = document.querySelector("input[name=fifteen]").value === '15%' ? 15 : 0;
-//   let twenty_five = document.querySelector("input[name=twenty-five]").value === '25%' ? 25 : 0;
-//   let fifty = document.querySelector("input[name=fifty]").value === '50%' ? 50 : 0;
 //   let custom = document.querySelector("input[name=custom]").value;
 //   let custom_No = typeof custom === "string" ? Number(custom) : 0;
 // };
 
-// function evaluate(amount, percent, individuals) {
-//   let individuals = Number(individuals);
-//   let amount  = Number(amount);
-//   let percent = Number(percent);
+function evaluate(a, p, i) {
+  let individuals = Number(i);
+  let amount = Number(a);
+  let percent = Number(p);
 
-//   if(amount){
-//     let per = amount * percent;
-//     let total = ( per + amount)/individuals;
-//     let tip = per/individuals;
-//   }
-// }
-let five = document.querySelector("input[name=ten]");
+  if (amount) {
+    let per = amount * percent;
+    let total = Number((per + amount) / individuals).toFixed(2);
+    let tip = Number(per / individuals).toFixed(2);
+    // console.log(tip + " " + total);
 
+    document.querySelector(".tip span").innerHTML = tip;
+    document.querySelector(".total span").innerHTML = total;
+  }
+}
 // Functions
+let bill = document.querySelector("#bill");
+let people = document.querySelector("#people");
+let clickedPercent = document.querySelector(".input-wrapper");
 //this gets the value of the key pressed event
 function getKeyPressed(value, event) {
   value.addEventListener(event, function keydown(e) {
-    console.log(e.target.value);
+    // people = Number(people.value);
+    let ple = Number(people.value);
+    let ill = Number(bill.value);
+    console.log(Number(bill.value));
+    getClicked(clickedPercent, ple, ill);
   });
 }
-getKeyPressed(five, "click");
+// getKeyPressed(clickedPercent, "click");
+getKeyPressed(bill, "keyup");
 getKeyPressed(people, "keyup");
+
+function getClicked(value, people, bill) {
+  percent = 0;
+
+  value.addEventListener("click", function keydown(e) {
+    if (e.target.value === "5%") {
+      percent = 0.05;
+      evaluate(bill, percent, people);
+    } else if (e.target.value === "10%") {
+      percent = 0.1;
+      evaluate(142.55, percent, people);
+    } else if (e.target.value === "15%") {
+      percent = 0.15;
+      evaluate(bill, percent, people);
+    } else if (e.target.value === "25%") {
+      percent = 0.25;
+      evaluate(142.55, percent, people);
+    } else if (e.target.value === "50%") {
+      percent = 0.5;
+      evaluate(142.55, percent, people);
+    } else if (e.target.value === undefined) {
+      console.log("sorry this is not defined");
+    }
+  });
+}
+// getClicked(clickedPercent, "click");
