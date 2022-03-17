@@ -1,9 +1,4 @@
-// const calc = function () {
-//   let custom = document.querySelector("input[name=custom]").value;
-//   let custom_No = typeof custom === "string" ? Number(custom) : 0;
-// };
-
-function evaluate(a, p, i) {
+const evaluate = (a, p, i) => {
   let individuals = Number(i);
   let amount = Number(a);
   let percent = Number(p);
@@ -12,31 +7,30 @@ function evaluate(a, p, i) {
     let per = amount * percent;
     let total = Number((per + amount) / individuals).toFixed(2);
     let tip = Number(per / individuals).toFixed(2);
-    // console.log(tip + " " + total);
 
     document.querySelector(".tip span").innerHTML = tip;
     document.querySelector(".total span").innerHTML = total;
   }
-}
+};
 // Functions
 let bill = document.querySelector("#bill");
 let people = document.querySelector("#people");
 let clickedPercent = document.querySelector(".input-wrapper");
-//this gets the value of the key pressed event
-function getKeyPressed(value, event) {
+
+const getKeyPressed = (value, event) => {
   value.addEventListener(event, function keydown(e) {
     // people = Number(people.value);
     let ple = Number(people.value);
     let ill = Number(bill.value);
-    console.log(Number(bill.value));
+
     getClicked(clickedPercent, ple, ill);
   });
-}
-// getKeyPressed(clickedPercent, "click");
+};
+
 getKeyPressed(bill, "keyup");
 getKeyPressed(people, "keyup");
 
-function getClicked(value, people, bill) {
+const getClicked = (value, people, bill) => {
   percent = 0;
 
   value.addEventListener("click", function keydown(e) {
@@ -59,5 +53,4 @@ function getClicked(value, people, bill) {
       console.log("sorry this is not defined");
     }
   });
-}
-// getClicked(clickedPercent, "click");
+};
